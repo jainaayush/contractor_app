@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Payment Requests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount</th>
+      <th>Currency</th>
+      <th>Description</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payment_requests.each do |payment_request| %>
+      <tr>
+        <td><%= payment_request.amount %></td>
+        <td><%= payment_request.currency %></td>
+        <td><%= payment_request.description %></td>
+        <td><%= payment_request.status.try(:titleize) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payment Request', new_payment_request_path %>
