@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PaymentRequest < ApplicationRecord
-  enum status: [:pending, :approved, :rejected]
+  enum status: %i[pending approved rejected]
 end
