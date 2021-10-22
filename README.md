@@ -1,24 +1,32 @@
-# README
+# Contractor application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a event driven application which uses `RabbitMQ` and `Bunny` plugin for publishing and accepting messages. Contractor can request a payment from their manager. A payment request consists of amount, currency, and text description. Contractor can see all of their payment requests, whether they're pending, accepted, or rejected. This application uses 
 
-Things you may want to cover:
+## Getting started
 
-* Ruby version
 
-* System dependencies
+To get started with the app, first clone the repo and `cd` into the directory:
 
-* Configuration
+```
+$ git clone https://github.com/jainaayush/contractor_app.git
+$ cd contractor
+```
 
-* Database creation
+Then install the needed gems:
 
-* Database initialization
+```
+$ bundle install
+```
 
-* How to run the test suite
+Next, migrate the database:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ rails db:migrate
+```
 
-* Deployment instructions
+Finally, run the server:
 
-* ...
+```
+$ rails server
+```
+This uses `RabbitMQ` so we need to setup rabbitmq server at development sert but currently the app uses the cloudamqp RabbitMq cloud server URL so we can skip the installation at local.
