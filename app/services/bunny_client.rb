@@ -15,11 +15,11 @@ module BunnyClient
     @channel ||= connection.create_channel
   end
 
-  def self.sending_queue
-    @sending_queue ||= channel.queue('pr-with-initial-status', durable: true)
-  end
-
   def self.incoming_queue
     @incoming_queue ||= channel.queue('pr-with-updated-status', durable: true)
+  end
+
+  def self.sending_queue
+    @sending_queue ||= channel.queue('pr-with-initial-status', durable: true)
   end
 end

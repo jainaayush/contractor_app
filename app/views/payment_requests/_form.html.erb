@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :currency %>
-    <%= form.text_field :currency %>
+    <%= form.currency_select(:currency, ["USD", "EUR", "CAD"], {}, {class: "form-control"}) -%>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_area :description %>
   </div>
 
   <div class="actions">

@@ -3,12 +3,12 @@
 class CreatePaymentRequests < ActiveRecord::Migration[6.1]
   def change
     create_table :payment_requests do |t|
-      t.integer :amount
-      t.string :currency
-      t.string :description
-      t.integer :status
+      t.integer :amount, null: false
+      t.string :currency, null: false
+      t.string :description, null: false
+      t.integer :status, default: 0
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

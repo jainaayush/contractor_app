@@ -17,7 +17,7 @@ class PaymentRequestsController < ApplicationController
 
     if @payment_request.save
       ExportPaymentRequestService.new(@payment_request.id).publish
-      redirect_to payment_requests_path, notice: 'Payment request was successfully created.'
+      redirect_to payment_requests_path, notice: 'Payment request was successfully created and sent for approval.'
     else
       render :new, status: :unprocessable_entity
     end

@@ -14,7 +14,7 @@ class UpdatePaymentRequestService
   def update_payment_request(message)
     parsed_msg = JSON.parse(message)
 
-    payment_request = PaymentRequest.find(id: parsed_msg['external_payment_request_id'])
+    payment_request = PaymentRequest.find(parsed_msg['external_payment_request_id'])
     payment_request.update(status: parsed_msg['status'])
   end
 end

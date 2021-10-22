@@ -18,7 +18,7 @@
         <td><%= payment_request.amount %></td>
         <td><%= payment_request.currency %></td>
         <td><%= payment_request.description %></td>
-        <td><%= payment_request.status.try(:titleize) %></td>
+        <td><%= payment_request.status.titleize %></td>
       </tr>
     <% end %>
   </tbody>
